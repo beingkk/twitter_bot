@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#!/karlis/local/bin/python3
 """
 
 """
@@ -16,8 +17,6 @@ for tweet in public_tweets:
     print(tweet.text)
 
 
-
-
-
 print("hey hey heyyyy")
 print("Hello Git")
+print("Another one")
