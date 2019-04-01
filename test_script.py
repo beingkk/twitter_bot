@@ -19,10 +19,5 @@ for tweet in public_tweets:
 
 print("hey hey heyyyy")
 print("Hello Git")
-<<<<<<< HEAD
-
-
 print("harambe")
-=======
 print("Another one")
->>>>>>> 6a5bf5ca2da0cc79a97502ba35aa904e692af6e6
