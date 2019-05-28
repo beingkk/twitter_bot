@@ -91,7 +91,7 @@ class TwitterClient():
         return tweets
 
     def store_tweets(self, tweets, order='reverse'):
-        
+
         with open(self.tweet_storage_filename, 'a') as file:
             if order == 'normal':
                 for tweet in tweets:
@@ -106,8 +106,8 @@ class TwitterClient():
 
 #### Laurens's tweet reading function
 def get_tweets_from_file(filename):
-    data = []
+    tweets = []
     with open(filename) as f:
         for line in f:
-            data.append(json.loads(line))
-    return data
+            tweets.append(json.loads(line))
+    return tweets
