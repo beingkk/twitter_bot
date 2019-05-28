@@ -2,8 +2,8 @@ from twitter_classes import *
 
 """ Checks the newest tweets with respect to the last saved tweet """
 
-filename = "influencer_tweets.dat"
-last_saved_tweet_id_filename = "influencer_tweets_last.dat"
+filename = "influencer_tweets.txt"
+last_saved_tweet_id_filename = "influencer_tweets_last.txt"
 last_saved_tweet_id = open(last_saved_tweet_id_filename).read()
 
 client = TwitterClient()
