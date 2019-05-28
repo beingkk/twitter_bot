@@ -12,4 +12,4 @@ auth.set_access_token(config.access_token, config.access_token_secret)
 
 api = tweepy.API(auth)
 
-api.update_status("What up with that?")
+api.update_status("What up with that????")

@@ -28,4 +28,4 @@ class MyStreamListener(tweepy.StreamListener):
 myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 
-myStream.filter(track=['trump'])
+myStream.filter(track=['trump'],follow=["2211149702"])
