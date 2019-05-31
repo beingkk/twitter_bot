@@ -56,6 +56,7 @@ class TwitterClient():
         self.auth = TwitterAuthenticator().authenticate_twitter_app()
         self.twitter_client = tweepy.API(self.auth)
         self.user_list = None
+        self.keyword_list = None
         self.tweet_storage_filename = None
 
     def get_twitter_client_api(self):
@@ -89,7 +90,18 @@ class TwitterClient():
             for tweet in tweepy.Cursor(self.twitter_client.user_timeline, id=user).items(num_tweets):
                 tweets.append(tweet)
         return tweets
-
+        
+    def get_tweets_with_keywords(self, begin_date=None, end_date=None, tweet_mode='extended', result_type='recent', max_tweets=None):
+        tweets = []
+        for tweet in tweepy.Cursor(self.twitter_client.search, 
+                                   tweet_mode=tweet_mode, 
+                                   q=self.keyword_list, 
+                                   lang='en', since=begin_date, 
+                                   until=end_date, 
+                                   result_type=result_type).items(max_tweets):  
+            tweets.append(tweet)
+        return tweets
+        
     def store_tweets(self, tweets, order='reverse'):
 
         with open(self.tweet_storage_filename, 'a') as file:
